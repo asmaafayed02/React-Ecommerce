@@ -5,12 +5,12 @@ const RenderProducts = (props) => {
     let {setFilter, filteredProducts,filter,data} = props
   return (
     <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button className="btn btn-outline-dark me-2" onClick={() =>setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark me-2" onClick={() =>filteredProducts("men's clothing")}>Men's clothing</button>
-          <button className="btn btn-outline-dark me-2" onClick={() =>filteredProducts("women's clothing")}>Women's clothing</button>
-          <button className="btn btn-outline-dark me-2" onClick={() =>filteredProducts("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark me-2" onClick={() =>filteredProducts("electronics")}>Electronics</button>
+        <div className="buttons d-sm-flex justify-content-center mb-5 pb-5 ">
+          <button className="btn btn-outline-dark m-2" onClick={() =>setFilter(data)}>All</button>
+          <button className="btn btn-outline-dark m-2" onClick={() =>filteredProducts("men's clothing")}>Men's clothing</button>
+          <button className="btn btn-outline-dark m-2" onClick={() =>filteredProducts("women's clothing")}>Women's clothing</button>
+          <button className="btn btn-outline-dark m-2" onClick={() =>filteredProducts("jewelery")}>Jewelery</button>
+          <button className="btn btn-outline-dark m-2" onClick={() =>filteredProducts("electronics")}>Electronics</button>
         </div>
         {filter.map((product) => {
           return (

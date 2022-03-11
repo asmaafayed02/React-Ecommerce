@@ -7,7 +7,7 @@ const RenderProduct = (props) => {
       <div className="col-md-6">
         <img src={product.image} className="shadow rounded" alt={product.title} width="90%" />
       </div>
-      <div className="col-md-6">
+      <div className="col-md-6 py-4">
         <p className="text-uppercase text-black-50">{product.category}</p>
         <h1 className="display-5">{product.title}</h1>
         <p className="lead fw-bolder">
