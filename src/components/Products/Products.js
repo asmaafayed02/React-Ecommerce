@@ -2,23 +2,28 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Loading from "../Shared/Loading";
 import RenderProducts from "./RenderProducts";
+
 function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
-  // let componentMount = true;
 
   useEffect(() => {
+    // Set loading to true when starting the API request
+    setLoading(true);
     axios
       .get("https://fakestoreapi.com/products")
       .then((response) => {
-        setLoading(true);
+        // Set product data when API request succeeds
         setData(response.data);
         setFilter(response.data);
-        setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        console.error("Error fetching products:", error);
+      })
+      .finally(() => {
+        // Set loading to false when request completes (whether success or error)
+        setLoading(false);
       });
   }, []);
 
